@@ -1,4 +1,4 @@
-# genpizza 🍕
+# Genpizza 🍕
 Genpizza é um sistema para gestão de pedidos para pizzarias.
 
 #### Detalhes do projeto:
