@@ -43,8 +43,8 @@ public class Main {
 	public static void  main(String args[])
 	{
 		Scanner ler = new Scanner(System.in);
-		int opcPizza = 5, opcBebida = 5, qtd = 0;
-		double totalPizza = 0, totalBebida = 0;
+		int opcPizza = 5, opcBebida = 5, qtd = 0, formaPgto;
+		double totalPizza = 0, totalBebida = 0, pagoCliente = 0;
 		double precos[] = {21,23,25,4.5,6,3.5};
 
 		while(opcPizza != 0)
@@ -90,7 +90,7 @@ public class Main {
 		while(opcBebida != 0)
 		{
 			cardapioBebida();
-			System.out.println("Digite o código da pizza desejada: ");
+			System.out.println("Digite o código da bebida desejada: ");
 			opcBebida = ler.nextInt();
 			
 			if(opcBebida == 1)
@@ -124,7 +124,36 @@ public class Main {
 			opcBebida = ler.nextInt();
 		}
 		
-		System.out.println("Você saiu do laço!");
-		
+		System.out.println("Compra finalizada");
+		 
+		System.out.println("Qual a forma de pagamento?");		
+		System.out.println("1. Dinheiro");
+		System.out.println("2. Cartão de Débito");
+		System.out.println("3. Cartão de Crédito");
+ 
+		formaPgto=ler.nextInt();
+ 
+		double total = totalPizza+totalBebida;
+		if(formaPgto==1) 
+		{
+ 
+			System.out.println("O valor da comanda é de "+(total*0.9));			
+			System.out.println("Qual o valor pago pelo cliente? ");
+			pagoCliente = ler.nextFloat();	
+			System.out.println("O troco é de "+(total*0.95));
+		}
+		else if(formaPgto == 2) 
+		{
+			System.out.println("O valor da comanda é de "+total);
+		}
+		else if(formaPgto == 3) 
+		{
+			System.out.println("O valor da comanda é de ");
+		}
+		else
+		{
+			System.out.println("Forma de pagamento não configurada");
+		}	
+ 
 	}
 }
