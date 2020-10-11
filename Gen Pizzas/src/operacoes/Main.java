@@ -43,7 +43,7 @@ public class Main {
 	public static void  main(String args[])
 	{
 		Scanner ler = new Scanner(System.in);
-		int opcPizza = 4, opcBebida = 4;
+		int opcPizza = 5, opcBebida = 5, qtd = 0;
 		double totalPizza = 0, totalBebida = 0;
 		double precos[] = {21,23,25,4.5,6,3.5};
 
@@ -55,6 +55,8 @@ public class Main {
 				
 			if(opcPizza == 1)
 			{
+				System.out.println("");
+				if(qtd == 1)
 				System.out.println("Pizza sabor *Mussarela* adicionar ao carrinho!");
 				totalPizza = totalPizza + precos[0];
 				opcPizza = 0;
@@ -121,6 +123,7 @@ public class Main {
 			System.out.println("\nGostaria de adicionar mais bebidas? 1 - sim//0 - não");
 			opcBebida = ler.nextInt();
 		}
+		
 		System.out.println("Você saiu do laço!");
 		
 	}
