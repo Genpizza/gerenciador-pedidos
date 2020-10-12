@@ -1,6 +1,7 @@
 package operacoes;
 
 import java.util.Scanner;
+import java.math.*;
 
 public class Main {
 	/*
@@ -28,13 +29,14 @@ public class Main {
 				+ "-----------------------------------------------------------------------------------------\n");
 	}
 
-
+ 
 	public static void main(String args[]) {
 		int opInicio, x;
+		String item="";
+		String nome="";
 		Scanner ler = new Scanner(System.in);
 
 		double Faturamento = 0;
-
 		do {
 		// Menu inicial
 		System.out.println("Olá! O que faremos hoje?\n");
@@ -50,9 +52,13 @@ public class Main {
 			int opcPizza = 5, opcBebida = 5, qtd = 0, formaPgto, fimPedido;
 			double totalPizza = 0, totalBebida = 0, pagoCliente = 0;
 			double precos[] = {21,23,25,4.5,6,3.5};
+			
 			//Início pedido
 			 
-			 
+			System.out.println("Digite o nome do cliente: ");
+			nome=ler.next();
+			item=(item.concat("\n<*}) Pedido de: "+nome+"\n"));
+			
 			while(opcPizza != 0)
 		{
 			cardapioPizza();
@@ -65,18 +71,21 @@ public class Main {
 				//if(qtd == 1)
 				System.out.println("Pizza sabor *Mussarela* adicionar ao carrinho!");
 				totalPizza = totalPizza + precos[0];
+				item=(item.concat("1 - Mussarela - 21,00R$\n"));
 				opcPizza = 0;
 			}
 			else if(opcPizza == 2)
 			{
 				System.out.println("Pizza sabor *Fran Catu* adicionar ao carrinho!");
 				totalPizza = totalPizza + precos[1];
+				item=(item.concat("1 - Fran Catu - 23,00R$\n"));
 				opcPizza = 0;
 			}
 			else if(opcPizza == 3)
 			{
 				System.out.println("Pizza sabor *Calabresa* adicionar ao carrinho!");
 				totalPizza = totalPizza + precos[2];
+				item=(item.concat("1 - Calabresa - 25,00R$\n"));
 				opcPizza = 0;
 			}
 			else if(opcPizza == 4)
@@ -103,18 +112,21 @@ public class Main {
 			{
 				System.out.println("Dolly adicionado ao carrinho!");
 				totalBebida = totalBebida + precos[3];
+				item=(item.concat("1 - Dolly 2L - 4,50R$\n"));
 				opcBebida = 0;
 			}
 			else if(opcBebida == 2)
 			{
 				System.out.println("Coca-cola adicionada ao carrinho!");
 				totalBebida = totalBebida + precos[4];
+				item=(item.concat("1 - Coca-Cola 2L -  6,00R$\n"));
 				opcBebida = 0;
 			}
 			else if(opcBebida == 3)
 			{
 				System.out.println("Água adicionada ao carrinho!");
 				totalBebida = totalBebida + precos[5];
+				item=(item.concat("1 - Agua 600ml - 3,50R$\n"));
 				opcBebida = 0;
 			}
 			else if(opcPizza == 4)
@@ -130,8 +142,7 @@ public class Main {
 			opcBebida = ler.nextInt();
 		}
 
-		System.out.println("Compra finalizada");
-
+		
 		System.out.println("Qual a forma de pagamento?");		
 		System.out.println("1. Dinheiro");
 		System.out.println("2. Cartão de Débito");
@@ -144,22 +155,22 @@ public class Main {
 	while(formaPgto!=0) {
 		if(formaPgto==1) 
 		{		 
-			System.out.println("O valor da comanda é de "+(total*0.9));			
-			System.out.println("Qual o valor pago pelo cliente? ");
+			System.out.printf("O valor da comanda é de %.2f",(total*0.9),"/n");			
+			System.out.println("\nQual o valor pago pelo cliente? ");
 			pagoCliente = ler.nextFloat();	
-			System.out.println("O troco é de "+(pagoCliente - (total*0.9)));
+			System.out.printf("O troco é de %.2f",(pagoCliente - (total*0.9)));
 			formaPgto=0;
 		Faturamento=Faturamento+(total*0.9);
 		}
 		else if(formaPgto == 2) 
 		{
-			System.out.println("O valor da comanda é de "+total*0.95);
+			System.out.printf("O valor da comanda é de %.2f",total*0.95);
 			formaPgto=0;
 		Faturamento=Faturamento+(total*0.95);	
 		}
 		else if(formaPgto == 3) 
 		{
-			System.out.println("O valor da comanda é de "+ total);
+			System.out.printf("O valor da comanda é de %.2f", total);
 			formaPgto=0;
 		Faturamento=Faturamento+(total);
 		}
@@ -174,19 +185,24 @@ public class Main {
 
 			formaPgto=ler.nextInt();
 		}
-		System.out.println("Digite 0 para finalizar o pedido");
+		System.out.println("\nDigite 0 para finalizar o pedido");
 		fimPedido=ler.nextInt();
 		
 	}
 			break;
 		case 2:
-			System.out.println("Mostra lista dos pedidos\n\n");
-
+			System.out.println("---------------------------------------------------------------------------------\n");
+			System.out.println("Lista de pedidos");
+			System.out.println("---------------------------------------------------------------------------------\n");
+			System.out.println("\n"+item+"\n");
+			System.out.println("---------------------------------------------------------------------------------\n\n");
 			break;
+		
 		case 3:
 			System.out.println("---------------------------------------------------------------------------------\n\n");
 			System.out.println("O faturamento do dia foi de: R$" + Faturamento);
 			System.out.println("---------------------------------------------------------------------------------\n\n");
+
 			break;
 		default:
 			System.out.println("Ops! parece que você digitou um número inválido\n");
