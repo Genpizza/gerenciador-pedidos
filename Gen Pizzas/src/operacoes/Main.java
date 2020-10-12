@@ -1,8 +1,8 @@
-package operacoes;
+package codigos;
 
 import java.util.Scanner;
 	
-public class Main {
+public class CodigosJuntos {
 /*	public static void pular()
 	{
 		for(int p = 0; p <=20; p++)
@@ -150,27 +150,39 @@ public class Main {
 				formaPgto=ler.nextInt();
 		 
 				double total = totalPizza+totalBebida;
+				
+			while(formaPgto!=0) {
 				if(formaPgto==1) 
-				{
-		 
+				{		 
 					System.out.println("O valor da comanda é de "+(total*0.9));			
 					System.out.println("Qual o valor pago pelo cliente? ");
 					pagoCliente = ler.nextFloat();	
 					System.out.println("O troco é de "+(pagoCliente - (total*0.9)));
+					formaPgto=0;
 				}
 				else if(formaPgto == 2) 
 				{
 					System.out.println("O valor da comanda é de "+total*0.95);
+					formaPgto=0;
 				}
 				else if(formaPgto == 3) 
 				{
 					System.out.println("O valor da comanda é de "+ total);
+					formaPgto=0;
 				}
 				else
 				{
 					System.out.println("Forma de pagamento não configurada");
+					formaPgto=0;
+					System.out.println("Qual a forma de pagamento?\n");		
+					System.out.println("1. Dinheiro");
+					System.out.println("2. Cartão de Débito");
+					System.out.println("3. Cartão de Crédito");
+						
+					formaPgto=ler.nextInt();
 				}	
-				
+			
+			}
 				//fim pedido
 				
 				break;
