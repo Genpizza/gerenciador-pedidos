@@ -22,8 +22,8 @@ public class Main {
 				+"1 - 	Mussarela - mussarela, molho de tomate, oregano e rodelas de tomate - 21,00R$\n"
 				+"2 - 	Fran Catu - frango desfiado, molho de tomate, catupiry e oregano    - 23,00R$\n"
 				+"3 - 	Calabresa - calabreza, molho de tomate, cebola e oregano            - 25,00R$\n"
-				+"4 - Sair"
-				+"-----------------------------------------------------------------------------------------");
+				+"4 - Sair\n"
+				+"-----------------------------------------------------------------------------------------\n");
 	}
 	
 	public static void cardapioBebida()
@@ -36,8 +36,8 @@ public class Main {
 				+"1 - 	  Dolly 2L     -  4,50R$\n"
 				+"2 - 	  Coca-Cola 2L -  6,00R$\n"
 				+"3 - 	  Agua 600ml   -  3,50R$\n"
-				+"4 - Sair"
-				+"-----------------------------------------------------------------------------------------");
+				+"4 - Sair\n"
+				+"-----------------------------------------------------------------------------------------\n");
 	}
 	
 	public static void  main(String args[])
@@ -55,8 +55,8 @@ public class Main {
 				
 			if(opcPizza == 1)
 			{
-				System.out.println("");
-				if(qtd == 1)
+				//System.out.println("");
+				//if(qtd == 1)
 				System.out.println("Pizza sabor *Mussarela* adicionar ao carrinho!");
 				totalPizza = totalPizza + precos[0];
 				opcPizza = 0;
@@ -140,15 +140,15 @@ public class Main {
 			System.out.println("O valor da comanda é de "+(total*0.9));			
 			System.out.println("Qual o valor pago pelo cliente? ");
 			pagoCliente = ler.nextFloat();	
-			System.out.println("O troco é de "+(total*0.95));
+			System.out.println("O troco é de "+(pagoCliente - (total*0.9)));
 		}
 		else if(formaPgto == 2) 
 		{
-			System.out.println("O valor da comanda é de "+total);
+			System.out.println("O valor da comanda é de "+total*0.95);
 		}
 		else if(formaPgto == 3) 
 		{
-			System.out.println("O valor da comanda é de ");
+			System.out.println("O valor da comanda é de "+ total);
 		}
 		else
 		{
