@@ -45,6 +45,7 @@ public class Main {
 	{
 		Scanner read = new Scanner(System.in);
 		int opInicio;
+		String itensPedido = "Itens do pedido\n";
 		
 		//Menu inicial
 			System.out.println("Olá! O que faremos hoje?\n");
@@ -75,6 +76,12 @@ public class Main {
 						//if(qtd == 1)
 						System.out.println("Pizza sabor *Mussarela* adicionar ao carrinho!");
 						totalPizza = totalPizza + precos[0];
+						
+						//popular vetor do pedido
+						for(int i=0;i<1;i++) {
+							itensPedido = (itensPedido.concat("1 - 	Mussarela - mussarela, molho de tomate, oregano e rodelas de tomate - 21,00R$\n"));
+							i++;
+						}
 						opcPizza = 0;
 					}
 					else if(opcPizza == 2)
@@ -113,7 +120,12 @@ public class Main {
 					{
 						System.out.println("Dolly adicionado ao carrinho!");
 						totalBebida = totalBebida + precos[3];
+						System.out.println("\nGostaria de adicionar mais bebidas? 1 - sim//0 - não\n");
 						opcBebida = 0;
+						for(int i=0;i<1;i++) {
+							itensPedido = (itensPedido.concat("1 - 	  Dolly 2L     -  4,50R$\n"));
+							i++;
+						}
 					}
 					else if(opcBebida == 2)
 					{
@@ -136,7 +148,7 @@ public class Main {
 						System.out.println("Código de bebida inválido!");
 					}
 					
-					System.out.println("\nGostaria de adicionar mais bebidas? 1 - sim//0 - não");
+					System.out.println("\nGostaria de adicionar mais bebidas? 1 - sim//0 - não\n");
 					opcBebida = ler.nextInt();
 				}
 				
@@ -157,10 +169,13 @@ public class Main {
 					System.out.println("Qual o valor pago pelo cliente? ");
 					pagoCliente = ler.nextFloat();	
 					System.out.println("O troco é de "+(pagoCliente - (total*0.9)));
+					System.out.println(itensPedido);
 				}
 				else if(formaPgto == 2) 
 				{
 					System.out.println("O valor da comanda é de "+total*0.95);
+					
+					
 				}
 				else if(formaPgto == 3) 
 				{
@@ -176,7 +191,9 @@ public class Main {
 				break;
 			case 2:
 				System.out.println("Mostra lista dos pedidos\n\n");
-
+				for(int i=0;i<1;i++) {
+					System.out.println(itensPedido);
+				}
 				break;
 			case 3:
 				System.out.println("Mostrar faturamento");
