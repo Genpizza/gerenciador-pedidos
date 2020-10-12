@@ -1,8 +1,8 @@
-package operacoes;
+package codigos;
 
 import java.util.Scanner;
 	
-public class Main {
+public class CodigosJuntos {
 /*	public static void pular()
 	{
 		for(int p = 0; p <=20; p++)
@@ -45,7 +45,6 @@ public class Main {
 	{
 		Scanner read = new Scanner(System.in);
 		int opInicio;
-		String itensPedido = "Itens do pedido\n";
 		
 		//Menu inicial
 			System.out.println("Olá! O que faremos hoje?\n");
@@ -76,12 +75,6 @@ public class Main {
 						//if(qtd == 1)
 						System.out.println("Pizza sabor *Mussarela* adicionar ao carrinho!");
 						totalPizza = totalPizza + precos[0];
-						
-						//popular vetor do pedido
-						for(int i=0;i<1;i++) {
-							itensPedido = (itensPedido.concat("1 - 	Mussarela - mussarela, molho de tomate, oregano e rodelas de tomate - 21,00R$\n"));
-							i++;
-						}
 						opcPizza = 0;
 					}
 					else if(opcPizza == 2)
@@ -120,12 +113,7 @@ public class Main {
 					{
 						System.out.println("Dolly adicionado ao carrinho!");
 						totalBebida = totalBebida + precos[3];
-						System.out.println("\nGostaria de adicionar mais bebidas? 1 - sim//0 - não\n");
 						opcBebida = 0;
-						for(int i=0;i<1;i++) {
-							itensPedido = (itensPedido.concat("1 - 	  Dolly 2L     -  4,50R$\n"));
-							i++;
-						}
 					}
 					else if(opcBebida == 2)
 					{
@@ -148,7 +136,7 @@ public class Main {
 						System.out.println("Código de bebida inválido!");
 					}
 					
-					System.out.println("\nGostaria de adicionar mais bebidas? 1 - sim//0 - não\n");
+					System.out.println("\nGostaria de adicionar mais bebidas? 1 - sim//0 - não");
 					opcBebida = ler.nextInt();
 				}
 				
@@ -162,38 +150,45 @@ public class Main {
 				formaPgto=ler.nextInt();
 		 
 				double total = totalPizza+totalBebida;
+				
+			while(formaPgto!=0) {
 				if(formaPgto==1) 
-				{
-		 
+				{		 
 					System.out.println("O valor da comanda é de "+(total*0.9));			
 					System.out.println("Qual o valor pago pelo cliente? ");
 					pagoCliente = ler.nextFloat();	
 					System.out.println("O troco é de "+(pagoCliente - (total*0.9)));
-					System.out.println(itensPedido);
+					formaPgto=0;
 				}
 				else if(formaPgto == 2) 
 				{
 					System.out.println("O valor da comanda é de "+total*0.95);
-					
-					
+					formaPgto=0;
 				}
 				else if(formaPgto == 3) 
 				{
 					System.out.println("O valor da comanda é de "+ total);
+					formaPgto=0;
 				}
 				else
 				{
 					System.out.println("Forma de pagamento não configurada");
+					formaPgto=0;
+					System.out.println("Qual a forma de pagamento?\n");		
+					System.out.println("1. Dinheiro");
+					System.out.println("2. Cartão de Débito");
+					System.out.println("3. Cartão de Crédito");
+						
+					formaPgto=ler.nextInt();
 				}	
-				
+			
+			}
 				//fim pedido
 				
 				break;
 			case 2:
 				System.out.println("Mostra lista dos pedidos\n\n");
-				for(int i=0;i<1;i++) {
-					System.out.println(itensPedido);
-				}
+
 				break;
 			case 3:
 				System.out.println("Mostrar faturamento");
