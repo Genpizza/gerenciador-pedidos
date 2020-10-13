@@ -90,21 +90,21 @@ public class Main {
 				{
 					System.out.println("Pizza sabor *Mussarela* adicionar ao carrinho!");
 					totalPizza = totalPizza + precos[0];
-					item=(item.concat("1 - Mussarela - 21,00R$\n"));
+					item=(item.concat("1 - Mussarela - R$21,00\n"));
 					opcPizza = 0;
 				}
 				else if(opcPizza == 2)
 				{
 					System.out.println("Pizza sabor *Fran Catu* adicionar ao carrinho!");
 					totalPizza = totalPizza + precos[1];
-					item=(item.concat("1 - Fran Catu - 23,00R$\n"));
+					item=(item.concat("1 - Fran Catu - R$23,00\n"));
 					opcPizza = 0;
 				}
 				else if(opcPizza == 3)
 				{
 					System.out.println("Pizza sabor *Calabresa* adicionar ao carrinho!");
 					totalPizza = totalPizza + precos[2];
-					item=(item.concat("1 - Calabresa - 25,00R$\n"));
+					item=(item.concat("1 - Calabresa - R$25,00\n"));
 					opcPizza = 0;
 				}
 				else if(opcPizza == 4)
@@ -131,21 +131,21 @@ public class Main {
 				{
 					System.out.println("Dolly adicionado ao carrinho!");
 					totalBebida = totalBebida + precos[3];
-					item=(item.concat("1 - Dolly 2L - 4,50R$\n"));
+					item=(item.concat("1 - Dolly 2L - R$4,50\n"));
 					opcBebida = 0;
 				}
 				else if(opcBebida == 2)
 				{
 					System.out.println("Coca-cola adicionada ao carrinho!");
 					totalBebida = totalBebida + precos[4];
-					item=(item.concat("1 - Coca-Cola 2L -  6,00R$\n"));
+					item=(item.concat("1 - Coca-Cola 2L -  R$6,00\n"));
 					opcBebida = 0;
 				}
 				else if(opcBebida == 3)
 				{
 					System.out.println("Água adicionada ao carrinho!");
 					totalBebida = totalBebida + precos[5];
-					item=(item.concat("1 - Agua 600ml - 3,50R$\n"));
+					item=(item.concat("1 - Agua 600ml - R$3,50\n"));
 					opcBebida = 0;
 				}
 				else if(opcPizza == 4)
