@@ -20,8 +20,9 @@ Em 4 dias desenvolver um projeto com tema livre utilizando todos os tópicos est
 @gustavomathielo
 
 #### Como usar o sistema:
-1) Executar utilizando o eclipse
-2) Digitar as opções exibidas no console
+1) Baixar ou clonar o projeto
+2) Executar utilizando o Eclipse
+3) Digitar as opções exibidas no console
 
 #### Funcionalidades
 - Registrar um pedido
@@ -31,7 +32,7 @@ Em 4 dias desenvolver um projeto com tema livre utilizando todos os tópicos est
   - Selecionar a opção de bebida
   - Calcular o valor do pedido
   - Selecionar a forma de pagamento
-  - Calcular o troco caso a forma de pagamento for dinheiro
+  - Calcular o troco para pagamento em dinheiro
   - 10% de desconto para pagamento em dinheiro
   - 5% de desconto para pagamento em débito
 - Listar todos os pedidos feitos
