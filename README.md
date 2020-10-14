@@ -23,6 +23,21 @@ Em 4 dias desenvolver um projeto com tema livre utilizando todos os tópicos est
 1) Executar utilizando o eclipse
 2) Digitar as opções exibidas no console
 
+#### Funcionalidades
+- Registrar um pedido
+  - Nome do cliente
+  - Mostrar cardápio
+  - Selecionar a opção de sabor da pizza
+  - Selecionar a opção de bebida
+  - Calcular o valor do pedido
+  - Selecionar a forma de pagamento
+  - Calcular o troco caso a forma de pagamento for dinheiro
+  - 10% de desconto para pagamento em dinheiro
+  - 5% de desconto para pagamento em débito
+- Listar todos os pedidos feitos
+- Calcular faturamento do dia
+
+
 #### Detalhes do projeto:
 https://docs.google.com/document/d/1SjyT3m3ddnqpznVGXvg3Ekf4-T63lt4PgtJasfDlN9M/edit?usp=sharing
 
